@@ -12,4 +12,7 @@ int main() {
 回答 : 問題を開いてmain.cppを編集
 テスト : oj test -c ./a.out -d ./tests
 提出 : acc submit
+
+git操作
+
 */

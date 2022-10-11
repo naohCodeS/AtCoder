@@ -8,7 +8,7 @@ using namespace std;
 
 ll n,m;
 vector<vector<ll>> x;
-vector<vector<bool>> g(101, vector<bool>(101));
+bool g[105][105];
 
 int main(){
     cin>>n>>m;
@@ -23,7 +23,7 @@ int main(){
     }
     rep(i,m){
         for(ll j=0; j<(ll)x[i].size()-1LL; j++){
-            for(ll k=j+1; k<(ll)x[j].size(); k++){
+            for(ll k=j+1; k<(ll)x[i].size(); k++){
                 g[x[i][j]-1][x[i][k]-1] = true;
                 g[x[i][k]-1][x[i][j]-1] = true;
             }

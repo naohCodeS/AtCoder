@@ -10,15 +10,6 @@ int a[2][2] = {
 int main() {
   // cout << "こんにちは" << endl;
   // cout << "AtCoder" << endl;
-  cout<<&a<<endl;
-  cout<<a<<endl;
-  cout<<*a<<endl;
-  cout<<**a<<endl;
-
-  cout<<a[1]<<endl;
-  cout<<&a[0][1]<<endl;
-
-  cout<<*(a[1]+1)<<endl;
 }
 
 

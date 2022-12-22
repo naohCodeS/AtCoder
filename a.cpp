@@ -2,14 +2,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int a[2][2] = {
-  {1,2},
-  {3,4}
-};
+
 
 int main() {
-  // cout << "こんにちは" << endl;
-  // cout << "AtCoder" << endl;
+  int n; cin>>n;
+  queue<int> q;
+  
 }
 
 

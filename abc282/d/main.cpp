@@ -47,32 +47,13 @@ int main(){
         cout<<0<<endl;
         return 0;
     }
-
-    vector<vector<ll>> group(groupid);
-    rep(i,n){
-        cout<<color[i]<<endl;
-        group[ceil(color[i]/2.0)-1].push_back(i);
-    }
-    rep(i, groupid){
-        cout<<"group " <<i<<endl;
-        for(auto v : group[i]) cout<<v<<" ";
-        cout<<endl;
-    }
-
-    ll minus = 0;
-    rep(v1,n){
-        for(auto v2 : g[v1]){
-            if(color[v1]!=color[v2]) minus++;
-        }
-    }
     map<ll,ll>color_counter;
     rep(i,n) {
         color_counter[color[i]]++;
     }
-    ll ans = 0;
-    for(ll i=1; i<=groupid; i++){
-        ans += color_counter[2*i-1]*(n-group[i-1].size())*color_counter[2*i];
-        ans += color_counter[2*i]*(n-group[i-1].size())*color_counter[2*i-1];
+    ll tmp=0;
+    for(auto ite = color_counter.begin(); ite != color_counter.end(); ite++){
+        tmp += ite->second*(ite->second-1)/2;
     }
-    cout<<ans/2-minus/2<<endl;
+    cout<<n*(n-1)/2-m-tmp<<endl;
 }

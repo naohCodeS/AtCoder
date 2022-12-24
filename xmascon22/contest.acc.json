@@ -1,0 +1,97 @@
+{
+  "contest": {
+    "id": "xmascon22",
+    "title": "Xmas Contest 2022",
+    "url": "https://atcoder.jp/contests/xmascon22"
+  },
+  "tasks": [
+    {
+      "id": "xmascon22_a",
+      "label": "A",
+      "title": "Arte Del Latte",
+      "url": "https://atcoder.jp/contests/xmascon22/tasks/xmascon22_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "xmascon22_b",
+      "label": "B",
+      "title": "Battle Solving",
+      "url": "https://atcoder.jp/contests/xmascon22/tasks/xmascon22_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "xmascon22_c",
+      "label": "C",
+      "title": "Conditional Swap",
+      "url": "https://atcoder.jp/contests/xmascon22/tasks/xmascon22_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "xmascon22_d",
+      "label": "D",
+      "title": "Dichotomy",
+      "url": "https://atcoder.jp/contests/xmascon22/tasks/xmascon22_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "xmascon22_e",
+      "label": "E",
+      "title": "Educational Statement",
+      "url": "https://atcoder.jp/contests/xmascon22/tasks/xmascon22_e",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "xmascon22_f",
+      "label": "F",
+      "title": "Fast as Fast as Ryser",
+      "url": "https://atcoder.jp/contests/xmascon22/tasks/xmascon22_f",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "xmascon22_g",
+      "label": "G",
+      "title": "Generator SAT",
+      "url": "https://atcoder.jp/contests/xmascon22/tasks/xmascon22_g",
+      "directory": {
+        "path": "g",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    },
+    {
+      "id": "xmascon22_h",
+      "label": "H",
+      "title": "Happy Game",
+      "url": "https://atcoder.jp/contests/xmascon22/tasks/xmascon22_h",
+      "directory": {
+        "path": "h",
+        "testdir": "tests",
+        "submit": "main.cpp"
+      }
+    }
+  ]
+}

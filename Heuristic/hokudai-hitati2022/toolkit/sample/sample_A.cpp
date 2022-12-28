@@ -15,41 +15,32 @@ using namespace std;
 
 struct IOServer {
     vector<int> selected_jobs;
-    int T_max; /*作業期間の長さ*/
-    int V; /*地理情報を表すグラフの頂点数*/
-    int E; /*地理情報を表すグラフの辺の数*/
-    vector<vector<pair<int,int>>> edge; /*頂点間の辺と、その重み pair<頂点番号, 辺の重み>*/
-    vector<vector<int>> dist; /*各頂点間の最短距離*/
-    int N_worker; /*ワーカーの数*/
-    int N_job; /*ジョブの数*/
+    int T_max;
+    int V,E;
+    vector<vector<pair<int,int>>> edge;
+    vector<vector<int>> dist;
+    int N_worker,N_job;
     
     class Worker{
         public:
-            int N_type; /*実行可能なジョブのタイプ数*/
-            int L; /*単位時間に実行可能なタスク数の上限*/
-            int pos; /*ワーカーの位置*/
-            int pos2;
-            int dist;
-            set<int> type; /*実行可能なジョブのタイプ*/
+            int N_type,L,pos,pos2,dist;
+            set<int> type;
     };
 
     vector<Worker> worker;
 
     class Job{
         public:
-            int id; /*ジョブID*/
-            int type; /*ジョブタイプ*/
-            int N; /*完了までのタスク数*/
-            int v; /*ジョブの位置（頂点番号）*/
-            vector<pair<int,ll>> reward; /*報酬関数 pair<時刻, 報酬>*/
+            int id,type,N,v;
+            vector<pair<int,ll>> reward; 
             vector<ll> score;
-            vector<int> depend; /*依存するジョブID*/
+            vector<int> depend;
     };
 
     vector<Job> job;
 
 
-    //各頂点間の最短距離を求める。ダイクストラ法
+    //caliculate distance
     void dij(){
         dist.resize(V);
         for (int i=0;i<V;i++){
@@ -85,7 +76,6 @@ struct IOServer {
             edge[g].push_back({f,h});
         }
         dij();
-
         cin >> N_worker;
         worker.resize(N_worker);
         for (int i=0;i<N_worker;i++){
@@ -100,7 +90,6 @@ struct IOServer {
             worker[i].pos2=worker[i].pos;
             worker[i].dist=0;
         }
-
         cin >> N_job;
         job.resize(N_job);
         for (int i=0;i<N_job;i++){

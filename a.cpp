@@ -6,7 +6,24 @@ using namespace std;
 
 
 int main() {
-  int n; cin>>n;
+  int n,a,b;
+  vector<bool> dp;
+  cin>>n>>a>>b;
+  dp.resize(n, false);
+  dp[0] = true;
+  for(int i=0; i<n; i++){
+    if(i < a && i < b) continue;
+    if(i < a && i >= b) dp[i] = dp[i-b];
+    if(i < b && i >= a) dp[i] = dp[i-a];
+    if(i >= a && i >= b) dp[i] = dp[i-a] | dp[i-b];
+  }
+  int ans = 0;
+  for(int i=0; i<n; i++) {
+    cout<<dp[i]<<" ";
+    ans += (dp[i]?0:1);
+  }
+  cout<<endl;
+  cout<<ans<<endl;
 }
 
 

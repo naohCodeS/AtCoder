@@ -4,26 +4,71 @@ using namespace std;
 #define P pair<ll,ll>
 #define rep(i, n) for(ll i=0; i<(ll)(n); i++)
 
-
 int main() {
-  int n,a,b;
-  vector<bool> dp;
-  cin>>n>>a>>b;
-  dp.resize(n, false);
-  dp[0] = true;
-  for(int i=0; i<n; i++){
-    if(i < a && i < b) continue;
-    if(i < a && i >= b) dp[i] = dp[i-b];
-    if(i < b && i >= a) dp[i] = dp[i-a];
-    if(i >= a && i >= b) dp[i] = dp[i-a] | dp[i-b];
+  int m; cin>>m;
+  vector<string> s;
+  for(int i=0; i<m; i++){
+    string ss; cin>>ss;
+    s.push_back(ss);
   }
+  for(int i=0; i<m; i++){
+    string news;
+    for(int j=0; j<m; j++){
+      news.push_back(s[j][i]);
+    }
+    s.push_back(news);
+  }
+  for(int w=0; w<m; w++){
+    string news;
+    for(int i=0; w+i<m; i++){
+      news.push_back(s[i][w+i]);
+    }
+    s.push_back(news);
+  }
+  for(int h=0; h<m; h++){
+    string news;
+    for(int i=0; h+i<m; i++){
+      news.push_back(s[h+i][i]);
+    }
+    s.push_back(news);
+  }
+  for(int w=0; w<m; w++){
+    string news;
+    for(int i=w; i>=0; i--){
+      news.push_back(s[i][w-i]);
+    }
+    s.push_back(news);
+  }
+  for(int h=0; h<m; h++){
+    string news;
+    for(int i=h; i<m; i++){
+      news.push_back(s[i][m+h-i-1]);
+    }
+    s.push_back(news);
+  }
+
   int ans = 0;
-  for(int i=0; i<n; i++) {
-    cout<<dp[i]<<" ";
-    ans += (dp[i]?0:1);
+  for(string ss : s){
+    int asc=0, dsc=0;
+    int tmp1=0, tmp2=0;
+    for(int i=1; i<(int)ss.size(); i++){
+      if(ss[i]==ss[i-1]+1){
+        tmp1++;
+        tmp2=0;
+      }
+      else if(ss[i]==ss[i-1]-1){
+        tmp1=0;
+        tmp2++;
+      }
+      else{
+        tmp1=tmp2=0;
+      }
+      asc = max(asc, tmp1);
+      dsc = max(dsc, tmp2);
+    }
+    ans = max(max(ans, asc), dsc);
   }
-  cout<<endl;
-  cout<<ans<<endl;
+  cout<<ans+1<<endl;
 }
 
 
